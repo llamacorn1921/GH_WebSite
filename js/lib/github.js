@@ -1,9 +1,6 @@
-define(['githubAPI'], function(api) {
-
-	const github = new api.Octokit();
+define(function() {
 
 	(function () {
-		alert(api);
-		alert(github);
+
 	})();
 });
