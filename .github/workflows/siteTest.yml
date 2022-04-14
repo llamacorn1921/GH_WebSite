@@ -10,8 +10,8 @@ on:
 jobs:
   test-site:
     if ${{ github.event.workflow_run.conclusion == 'success' }}
-    name: TestSite for errors
     runs-on: ubuntu-latest
     steps:
+      - name: test if build was good
       - run: echo "hello"
     
