@@ -7,4 +7,4 @@ requirejs.config({
     },
     waitSeconds: 3
 });
-requirejs(['githubAPI', 'app/debug']);
+requirejs(['github', 'app/debug']);
