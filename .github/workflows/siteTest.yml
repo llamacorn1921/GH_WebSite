@@ -1,0 +1,17 @@
+name: Test site(s) for errors
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    branches: main
+    types:
+      - completed
+
+jobs:
+  test-site:
+    if ${{ github.event.workflow_run.conclusion == 'success' }}
+    name: TestSite for errors
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
+    
