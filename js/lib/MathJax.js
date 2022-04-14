@@ -14,9 +14,7 @@ define(["jquery"], function ($) {
 				MathJax.startup.promise.then(() => {
 					console.log("[MathJax] ready > completed");
 					document.getElementById("mathjax-ready").innerHTML = true;
-					// f.loadTex(() => {
-					// 	MathJax.typeset();
-					// });
+					MathJax.typeset();
 					$("#SI-button").attr("disabled", false);
 					$("#SI-button").click((e) => {
 						e.preventDefault();
