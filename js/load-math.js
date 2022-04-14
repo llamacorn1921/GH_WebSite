@@ -6,4 +6,4 @@ requirejs.config({
     },
     waitSeconds: 3
 });
-requirejs(['lib/MathJax','app/math']);
+requirejs(['MathJax','app/math']);
