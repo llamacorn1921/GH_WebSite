@@ -20,5 +20,4 @@ jobs:
           embed-title: GH_WebPage build status
           embed-description: The build has been successful
           embed-timestamp: true
-          embed-footer-text: "Commit message: ${{ github.event.head_commit.message }}"
           embed-footer-text: "Page Update Time: ${{ github.event.page_build }}"
