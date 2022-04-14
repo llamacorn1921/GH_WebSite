@@ -14,11 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: docker
+        run: docker pull ghcr.io/tj-actions/puppeteer:node-12
       - name: install deps
         uses: tj-actions/puppeteer@v3.2
         with:
           args: npm install
+
       - name: run test
+        needs: ['install deps']
         uses: tj-actions/puppeteer@v3.2
         with:
           args: npm test
