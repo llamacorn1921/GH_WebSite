@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test if build was good
-      - run: echo "hello"
+      run: echo "hello"
     
