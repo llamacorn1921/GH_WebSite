@@ -1,4 +1,4 @@
-define(["jquery", "formulas"], function ($, f) {
+define(["jquery"], function ($) {
 	let boolReady = false;
 	let boolPage = false;
 	window.MathJax = {
@@ -14,15 +14,15 @@ define(["jquery", "formulas"], function ($, f) {
 				MathJax.startup.promise.then(() => {
 					console.log("[MathJax] ready > completed");
 					document.getElementById("mathjax-ready").innerHTML = true;
-					f.loadTex(() => {
-						MathJax.typeset();
-					});
+					// f.loadTex(() => {
+					// 	MathJax.typeset();
+					// });
 					$("#SI-button").attr("disabled", false);
 					$("#SI-button").click((e) => {
 						e.preventDefault();
-						f.calculate(() => {
-							MathJax.typeset();
-						});
+						// f.calculate(() => {
+						// 	MathJax.typeset();
+						// });
 					});
 				});
 			},
