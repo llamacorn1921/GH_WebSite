@@ -1,5 +1,4 @@
 define(function() {
-
 	(function () {
 		let script = document.createElement("script");
 		script.type = 'module';
