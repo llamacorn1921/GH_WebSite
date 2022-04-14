@@ -6,5 +6,6 @@ define(function() {
 		script.src =
 			"https://cdn.skypack.dev/octokit";
 		document.head.appendChild(script);
+		console.log('tesyt');
 	})();
 });
