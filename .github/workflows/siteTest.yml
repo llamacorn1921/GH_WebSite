@@ -9,7 +9,7 @@ on:
   #     - completed
 
 jobs:
-  test-site:
+  build:
     # if ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -20,9 +20,7 @@ jobs:
         uses: tj-actions/puppeteer@v3.2
         with:
           args: npm install
-
       - name: run test
-        needs: ['install deps']
         uses: tj-actions/puppeteer@v3.2
         with:
           args: npm test
