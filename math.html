@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Math</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script
+            data-main="js/load-math"
+            src="https://requirejs.org/docs/release/2.3.6/minified/require.js"
+        ></script>
+		<link rel="stylesheet" href="css/math.css">
+		<link rel="stylesheet" href="css/global.css">
+	</head>
+	<body>
+		<div id="info-bar" class="ignore_math">
+			<p class="ignore_math debug-title">
+				[MathJax init] Ready:<span
+					id="mathjax-ready"
+					class="ignore_math debug-value"
+					>false</span
+				>
+			</p>
+			<p class="ignore_math debug-title">
+				[MathJax init] Page Ready:<span
+					id="mathjax-pageReady"
+					class="ignore_math debug-value"
+					>false</span
+				>
+			</p>
+		</div>
+		<div>
+			<p class="text-center">Finance Calculators</p>
+			<div id="div-calc">
+				<div id="simpleInterest-div">
+					<p id="SI-formula" class="text-center">
+						Loading formula...
+					</p>
+					<div class="row ignore_math">
+						<div class="column" class="ignore_math">
+							<label id="label-principal" class="left ignore_math"
+								>Principal (P)</label
+							><br /><label
+								id="label-rate"
+								class="left ignore_math"
+								>Rate (R)</label
+							><br /><label
+								id="label-time"
+								class="left ignore_math"
+								>Time (T)</label
+							>
+						</div>
+						<div class="column" class="ignore_math">
+							<input
+								id="input-principal"
+								class="right ignore_math"
+								type="number"
+							/><br /><input
+								id="input-rate"
+								class="right ignore_math"
+								type="number"
+							/><br /><input
+								id="input-time"
+								class="right ignore_math"
+								type="number"
+							/>
+						</div>
+					</div>
+					<button
+						id="SI-button"
+						type="button"
+						class="middle"
+						disabled
+					>
+						Calculate</button
+					><br />
+					<p id="SI-outFormula">Waiting for calculation...</p>
+				</div>
+				<br />
+			</div>
+		</div>
+		
+	</body>
+</html>
