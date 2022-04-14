@@ -1,0 +1,9 @@
+.link:active {
+	color: cyan;
+}
+.link:link {
+	color: black;
+}
+.link:visited {
+	color: black;
+}

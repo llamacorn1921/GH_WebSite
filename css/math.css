@@ -1,0 +1,25 @@
+#div-calc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.column {
+	display: inline-block;
+}
+.left {
+	margin-right: 10px;
+}
+.right {
+	margin-left: 10px;
+}
+.middle {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+input {
+	width: 80px;
+}
+#SI-outFormula {
+	text-align: center;
+}
