@@ -6,7 +6,6 @@ define(function() {
 		script.id = "OctoKit";
 		script.src =
 			"https://cdn.skypack.dev/octokit";
-		script.async = true;
 		document.head.appendChild(script);
 	})();
 });
