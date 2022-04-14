@@ -16,4 +16,9 @@ jobs:
         uses: tsickert/discord-webhook@v4.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_REPORTSERVER }}
-          content: "Test"
+          username: Mr. Reporter
+          embed-title: GH_WebPage build status
+          embed-description: The build has been successful
+          embed-timestamp: true
+          embed-footer-text: "Commit message: ${{ github.event.head_commit.message }}"
+          embed-footer-text: "Page Update Time: ${{ github.event.page_build }}"
