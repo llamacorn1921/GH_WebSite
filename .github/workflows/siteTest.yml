@@ -1,0 +1,24 @@
+name: Test site(s) for errors
+
+on:
+  workflow_dispatch:
+  # workflow_run:
+  #   workflows: ["pages-build-deployment"]
+  #   branches: main
+  #   types:
+  #     - completed
+
+jobs:
+  test-site:
+    # if ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install deps
+        uses: tj-actions/puppeteer@v3.2
+        with:
+          args: npm install
+      - name: run test
+        uses: tj-actions/puppeteer@v3.2
+        with:
+          args: npm test
