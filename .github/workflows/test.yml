@@ -7,7 +7,7 @@ env:
   username: Github reporter
 jobs:
   discord-report:
-    concurrecny: ci-${{ github.ref }}
+    # concurrecny: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: on success
