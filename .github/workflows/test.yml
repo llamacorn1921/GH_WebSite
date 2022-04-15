@@ -1,0 +1,29 @@
+name: testing workflows
+
+on:
+  workflow_dispatch
+
+env:
+  username: Github reporter
+jobs:
+  discord-report:
+    concurrecny: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: on success
+        # if: ${{ githhub.event.workflow_run.conclusion == 'success' }}
+        uses: "hugoalh/send-discord-webhook-ghaction@v4.2.0"
+        with:
+          key: "${{ secerets.DISCORD_REPORTSERVER}}"
+          payload: |
+            {
+              "username": "${{ env.username }}",
+              "content": "Page-build has failed.",
+              "embeds": [
+                {
+                  "title": "Workflow ID",
+                  "description": "${{ github.event.workflow_run.created_at }}"
+                }
+              ]
+
+            }
