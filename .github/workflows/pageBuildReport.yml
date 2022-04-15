@@ -1,4 +1,4 @@
-name Report page build
+name: Report page build
 
 on:
   workflow_run:
