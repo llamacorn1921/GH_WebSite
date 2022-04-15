@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: on success
-        if: ${{ githhub.event.workflow_run.conclusion == 'success' }}
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: "hugoalh/send-discord-webhook-ghaction@v4.2.0"
         with:
           key: "${{ secrets.DISCORD_REPORTSERVER}}"
