@@ -16,7 +16,7 @@ jobs:
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: "hugoalh/send-discord-webhook-ghaction@v4.2.0"
         with:
-          key: "${{ secrets.DISCORD_REPORTSERVER}}"
+          key: "${{ secrets.DISCORD_REPORTSERVER }}"
           payload: |
             {
               "username": "${{ env.username }}",
@@ -27,14 +27,15 @@ jobs:
                   "fields": [
                     {
                       "name": "Deployment Number",
-                      "value": "${{ github.event.workflow_run.run_numbr"
+                      "value": "${{ github.event.workflow_run.run_numbr }}"
                     },
                     {
                       "name": "Build start time:",
-                      "value": "${{ github.event.workflow_run.created_at",
+                      "value": "${{ github.event.workflow_run.created_at }}",
                       "inline": true
                     }
                   ]
                 }
               ]
             }
+            |
