@@ -1,0 +1,40 @@
+name Report page build
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+
+env:
+  username: Mr. Reporter
+jobs:
+  discord-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: on success
+        if: ${{ githhub.event.workflow_run.conclusion == 'success' }}
+        uses: "hugoalh/send-discord-webhook-ghaction@v4.2.0"
+        with:
+          key: "${{ secrets.DISCORD_REPORTSERVER}}"
+          payload: |
+            {
+              "username": "${{ env.username }}",
+              "content": "**Page-Build was a success.** *See embed for details*",
+              "embeds": [
+                {
+                  "title": "Page build details",
+                  "fields": [
+                    {
+                      "name": "Deployment Number",
+                      "value": "${{ github.event.workflow_run.run_numbr"
+                    },
+                    {
+                      "name": "Build start time:",
+                      "value": "${{ github.event.workflow_run.created_at",
+                      "inline": true
+                    }
+                  ]
+                }
+              ]
+            }
